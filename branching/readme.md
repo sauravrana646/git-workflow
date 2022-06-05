@@ -38,3 +38,4 @@ Now we have pushed it to github
 
 Now we can create a pull request for this to be merged into the master too (NOTE TO SELF : not gonna create PR for this one just so that I can understand this workflow later on)
 
+Check [Visualisation](images/workflow_visulisation.png) and [After Pull Visualisation](images/after_git_pull_in_dev.png) to understand how this all works when we pull before pushing.
