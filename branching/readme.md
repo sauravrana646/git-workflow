@@ -37,3 +37,4 @@ Now we can push code safely and it also reduces the chances of merge conficts la
 Now we have pushed it to github
 
 Now we can create a pull request for this to be merged into the master too (NOTE TO SELF : not gonna create PR for this one just so that I can understand this workflow later on)
+
