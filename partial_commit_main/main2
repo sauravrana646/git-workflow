@@ -5,7 +5,7 @@ I will try to commit this partially into the commit.
 
 This will be commited now 
 
-```
+
 import numpy as np
 import pandas as pd
 import statsmodels.api as sm
@@ -32,11 +32,10 @@ step_1 = step_1.applymap(np.int)
 
 result = sm.OLS(step_1['y'], sm.add_constant(step_1[['x', 'a', 'b']])).fit()
 print result.summary()
-```
+
 
 But not this one 
 
-```
 def categorize_dict(x, y=0):
     # x Requires string or numerical input
     # y is a boolean that specifices whether to return category names along with the dict.
@@ -52,4 +51,3 @@ def categorize_dict(x, y=0):
     if y:
         return outs,cats
     return outs
-```
