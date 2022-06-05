@@ -3,3 +3,53 @@ Data is written through the local git main2 file
 I will try to commit this partially into the commit.
 
 
+This will be commited now 
+
+```
+import numpy as np
+import pandas as pd
+import statsmodels.api as sm
+
+my_data = np.array([[5, 'a', 1],
+                    [3, 'b', 3],
+                    [1, 'b', 2],
+                    [3, 'a', 1],
+                    [4, 'b', 2],
+                    [7, 'c', 1],
+                    [7, 'c', 1]])                
+
+
+df = pd.DataFrame(data=my_data, columns=['y', 'dummy', 'x'])
+just_dummies = pd.get_dummies(df['dummy'])
+
+step_1 = pd.concat([df, just_dummies], axis=1)      
+step_1.drop(['dummy', 'c'], inplace=True, axis=1)
+# to run the regression we want to get rid of the strings 'a', 'b', 'c' (obviously)
+# and we want to get rid of one dummy variable to avoid the dummy variable trap
+# arbitrarily chose "c", coefficients on "a" an "b" would show effect of "a" and "b"
+# relative to "c"
+step_1 = step_1.applymap(np.int) 
+
+result = sm.OLS(step_1['y'], sm.add_constant(step_1[['x', 'a', 'b']])).fit()
+print result.summary()
+```
+
+But not this one 
+
+```
+def categorize_dict(x, y=0):
+    # x Requires string or numerical input
+    # y is a boolean that specifices whether to return category names along with the dict.
+    # default is no
+    cats = list(set(x))
+    n = len(cats)
+    m = len(x)
+    outs = {}
+    for i in cats:
+        outs[i] = [0]*m
+    for i in range(len(x)):
+        outs[x[i]][i] = 1
+    if y:
+        return outs,cats
+    return outs
+```
