@@ -1,5 +1,9 @@
 Create a Branching folder as root and inside it created a main folder in the master branch 
 
+#### Github Process to follow
+
+![Workflow Process to follow](images/github-process-to-follow.png)
+
 Now will create a dev branch and then create a dev folder along with master branch and then will make PR to merge it into the main folder of the master
 
 ![main](images/main.png)
